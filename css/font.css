@@ -1,0 +1,88 @@
+/*********/
+/* FONTS */
+/*********/
+
+
+/* Playfair */
+
+@font-face {
+    font-family: "Playfair";
+    src: url("../asset/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+	font-style: italic;
+}
+@font-face {
+    font-family: "Playfair";
+    src: url("../asset/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+	font-weight: 400 900;
+}
+
+/* Lato */
+
+
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-BlackItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: 600;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-BoldItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: 500;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-Italic.ttf") format("truetype");
+	font-style: italic;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-LightItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: 300;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-ThinItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: 200;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-Black.ttf") format("truetype");
+	font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-Bold.ttf") format("truetype");
+	font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-Regular.ttf") format("truetype");
+	font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-Light.ttf") format("truetype");
+	font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../asset/fonts/Lato-Thin.ttf") format("truetype");
+	font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Baskerville";
+    src: url("../asset/BASKVILL.ttf") format("truetype");
+    font-style: normal;
+}
+
