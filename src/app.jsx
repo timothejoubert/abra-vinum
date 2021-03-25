@@ -1,6 +1,8 @@
 import { Component } from "preact";
-
 import axios from "axios";
+import Rellax from "rellax";
+import About from "./components/About";
+import Header from "./components/Header";
 
 export class App extends Component {
   constructor() {
@@ -11,7 +13,6 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
     this.getData();
   }
 
@@ -19,11 +20,19 @@ export class App extends Component {
     const url =
       "https://script.google.com/macros/s/AKfycbyhLd29VBOLIEctYNjS7m2Qq4NzSb2n8_J0mKfebQwdUrqL3Hu02Zh9UB8mphs__KX-Wg/exec";
     const rest = await axios.get(url);
-    this.setState({ data: rest.data });
+    this.setState({ data: rest.data }, () => {
+      this.onDataLoadedHandler();
+    });
     console.log(rest.data);
   }
 
-  componentWillUnmount() {}
+  onDataLoadedHandler() {
+    this.setParralax();
+  }
+
+  setParralax() {
+    new Rellax(".para");
+  }
 
   render() {
     const { data } = this.state;
@@ -31,72 +40,18 @@ export class App extends Component {
 
     return (
       <>
-        {loading && <>Loading...</>}
+        {loading && (
+          <>
+            <p>Loading...</p>
+          </>
+        )}
         {!loading && (
           <>
             <div id="paper-texture"></div>
             <div id="map-texture"></div>
-            <header id="home">
-              <nav>
-                <ul class="scroll-link">
-                  <a href="#infos">
-                    <li>À propos</li>
-                  </a>
-                  <a href="#vignerons">
-                    <li>Vignerons</li>
-                  </a>
-                  <a href="#map">
-                    <li>Carte</li>
-                  </a>
-                  <a href="#contact">
-                    <li>Contact</li>
-                  </a>
-                </ul>
-              </nav>
-
-              <div class="content-home">
-                <div class="container-logo">
-                  <h1>Abra Vinum</h1>
-                  <h1>Abra Vinu</h1>
-                  <h1>Abra Vin</h1>
-                  <h1>Abra Vi</h1>
-                  <h1>Abra V</h1>
-                  <h1>Abra</h1>
-                  <h1>Abr</h1>
-                  <h1>Ab</h1>
-                  <h1>A</h1>
-                </div>
-                <div class="container-polyedre container-polyedre-home">
-                  <img src="static/polyedre-1.png" alt="" />
-                </div>
-              </div>
-            </header>
-
+            <Header></Header>
             <main>
-              <section id="infos">
-                <article class="content-apropos">
-                  <h2>À propos</h2>
-                  <h3>{data[0].contentSection1}</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quod, veritatis hic. Voluptate, consequuntur soluta
-                    excepturi, similique in repellendus nam eligendi adipisci
-                    modi sequi voluptatum. Id nobis aut officiis consequatur
-                    voluptatibus quos odio harum facilis, sed, temporibus sequi
-                    autem rem distinctio.
-                  </p>
-
-                  <div
-                    class="container-polyedre para container-polyedre-apropos"
-                    data-rellax-speed="1.8"
-                  >
-                    <img src="static/polyedre-2.png" alt="" />
-                  </div>
-                </article>
-
-                <article id="container-apropos-img"></article>
-              </section>
-
+              <About data={data[0]}></About>
               <section id="vignerons">
                 <h2>Vignerons</h2>
 
