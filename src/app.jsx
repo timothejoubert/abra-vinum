@@ -18,7 +18,7 @@ export class App extends Component {
 
   async getData() {
     const url =
-      "https://script.google.com/macros/s/AKfycbyhLd29VBOLIEctYNjS7m2Qq4NzSb2n8_J0mKfebQwdUrqL3Hu02Zh9UB8mphs__KX-Wg/exec";
+      "https://script.google.com/macros/s/AKfycbzDzIKo2XL4LngTthubZd6akG5Dq0_ua7lUlj-4hlnqMUFzGc23tYwwOkWkIPDAF7sjNQ/exec";
     const rest = await axios.get(url);
     this.setState({ data: rest.data }, () => {
       this.onDataLoadedHandler();
@@ -42,6 +42,7 @@ export class App extends Component {
       <>
         {loading && (
           <>
+            {/* TODO loading  */}
             <p>Loading...</p>
           </>
         )}
@@ -51,7 +52,9 @@ export class App extends Component {
             <div id="map-texture"></div>
             <Header></Header>
             <main>
-              <About data={data[0]}></About>
+              <About data={data.Main[0]}></About>
+
+              {/* TODO Faire un component pour les vigerons */}
               <section id="vignerons">
                 <h2>Vignerons</h2>
 
@@ -366,6 +369,7 @@ export class App extends Component {
               </section>
               <section id="map"></section>
 
+              {/* TODO Faire un component pour les contacts */}
               <section id="contact">
                 <h2 id="section3">Contact</h2>
                 <div class="content-contact">

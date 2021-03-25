@@ -6,9 +6,9 @@ function About(props) {
     <>
       <section id="infos">
         <article className="content-apropos">
-          <h2>{data.nomSection}</h2>
-          <h3>{data.contentSection1}</h3>
-          <p>{data.contentSection2}</p>
+          <h2>{data.title}</h2>
+          <h3>{data.headline}</h3>
+          <p>{data.content}</p>
           <div
             class="container-polyedre para container-polyedre-apropos"
             data-rellax-speed="1.8"
